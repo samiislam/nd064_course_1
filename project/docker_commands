@@ -1,11 +1,50 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
+# returned container id: 606a347a284ae6b67e84e6f1f8159faee2d2f9e691606ea07289c862c2fcf823
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs 606a
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+### In my setup - docker is running under WSL2 and therefore 172.17.0.2
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING: 2022-09-27 06:46:41,205 -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO: 2022-09-27 06:46:41,205 -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO: 2022-09-27 06:47:18,990 - 172.17.0.1 - - [27/Sep/2022 06:47:18] "GET / HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:19,014 - 172.17.0.1 - - [27/Sep/2022 06:47:19] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:47:24,926 - Article "KubeCon + CloudNativeCon 2021" has been retrieved
+INFO: 2022-09-27 06:47:24,931 - 172.17.0.1 - - [27/Sep/2022 06:47:24] "GET /2 HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:24,948 - 172.17.0.1 - - [27/Sep/2022 06:47:24] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:47:28,701 - Article "CNCF Cloud Native Definition v1.0" has been retrieved
+INFO: 2022-09-27 06:47:28,703 - 172.17.0.1 - - [27/Sep/2022 06:47:28] "GET /5 HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:28,720 - 172.17.0.1 - - [27/Sep/2022 06:47:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:47:35,309 - Presenting information about us
+DEBUG: 2022-09-27 06:47:35,310 - Testing out debug logging
+INFO: 2022-09-27 06:47:35,315 - 172.17.0.1 - - [27/Sep/2022 06:47:35] "GET /about HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:35,339 - 172.17.0.1 - - [27/Sep/2022 06:47:35] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:47:45,513 - Retrieving the health status
+INFO: 2022-09-27 06:47:45,514 - 172.17.0.1 - - [27/Sep/2022 06:47:45] "GET /healthz HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:50,600 - Retrieving the metrics information
+INFO: 2022-09-27 06:47:50,601 - 172.17.0.1 - - [27/Sep/2022 06:47:50] "GET /metrics HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:52,845 - Retrieving the metrics information
+INFO: 2022-09-27 06:47:52,846 - 172.17.0.1 - - [27/Sep/2022 06:47:52] "GET /metrics HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:56,500 - 172.17.0.1 - - [27/Sep/2022 06:47:56] "GET /create HTTP/1.1" 200 -
+INFO: 2022-09-27 06:47:56,523 - 172.17.0.1 - - [27/Sep/2022 06:47:56] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:48:08,468 - New article with title "My latest post" created
+INFO: 2022-09-27 06:48:08,470 - 172.17.0.1 - - [27/Sep/2022 06:48:08] "POST /create HTTP/1.1" 302 -
+INFO: 2022-09-27 06:48:08,478 - 172.17.0.1 - - [27/Sep/2022 06:48:08] "GET / HTTP/1.1" 200 -
+INFO: 2022-09-27 06:48:08,502 - 172.17.0.1 - - [27/Sep/2022 06:48:08] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:48:16,404 - Article with id 99 does not exist
+INFO: 2022-09-27 06:48:16,411 - 172.17.0.1 - - [27/Sep/2022 06:48:16] "GET /99 HTTP/1.1" 404 -
+INFO: 2022-09-27 06:48:16,442 - 172.17.0.1 - - [27/Sep/2022 06:48:16] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: 2022-09-27 06:48:43,063 - Article "My latest post" has been retrieved
+INFO: 2022-09-27 06:48:43,066 - 172.17.0.1 - - [27/Sep/2022 06:48:43] "GET /7 HTTP/1.1" 200 -
+INFO: 2022-09-27 06:48:43,085 - 172.17.0.1 - - [27/Sep/2022 06:48:43] "GET /static/css/main.css HTTP/1.1" 304 -
