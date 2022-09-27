@@ -27,7 +27,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.1
         with:
-          context: .
+          context: ./project/.
           file: ./project/Dockerfile
           platforms: linux/amd64
           push: true
