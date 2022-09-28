@@ -7,7 +7,7 @@ service:
 image:
   pullPolicy: Always
 
-replicaCount: 5
+replicaCount: 2
 
 resources:
   requests:
