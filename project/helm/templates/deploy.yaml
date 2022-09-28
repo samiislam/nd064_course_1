@@ -20,10 +20,12 @@ spec:
           ports:
             - containerPort: {{ .Values.containerPort }}
           readinessProbe:
+            initialDelaySeconds: 10
             httpGet:
               path: {{ .Values.readinessProbe.path }}
               port: {{ .Values.containerPort }}
           livenessProbe:
+            initialDelaySeconds: 10
             httpGet:
               path: {{ .Values.livenessProbe.path }}
               port: {{ .Values.containerPort }}
