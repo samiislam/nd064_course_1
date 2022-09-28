@@ -141,4 +141,4 @@ if __name__ == "__main__":
     logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s',
                         level=logging.DEBUG)
 
-    app.run(port='3111')
+    app.run(host='0.0.0.0', port='3111')
