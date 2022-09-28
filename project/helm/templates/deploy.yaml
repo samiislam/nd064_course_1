@@ -19,15 +19,15 @@ spec:
           name: techtrends
           ports:
             - containerPort: {{ .Values.containerPort }}
-          #readinessProbe:
-            #initialDelaySeconds: 60
-          #  httpGet:
-          #    path: {{ .Values.readinessProbe.path }}
-          #    port: {{ .Values.containerPort }}
-          #livenessProbe:
-          #  initialDelaySeconds: 60
-          #  httpGet:
-          #    path: {{ .Values.livenessProbe.path }}
-          #    port: {{ .Values.containerPort }}
+          readinessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: {{ .Values.readinessProbe.path }}
+              port: {{ .Values.containerPort }}
+          livenessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: {{ .Values.livenessProbe.path }}
+              port: {{ .Values.containerPort }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
