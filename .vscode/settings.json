@@ -1,0 +1,6 @@
+{
+  "prettier.enable": true,
+  "[helm]": {
+    "editor.formatOnSave": false
+  }
+}
