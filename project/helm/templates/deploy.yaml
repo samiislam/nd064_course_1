@@ -19,11 +19,11 @@ spec:
           name: techtrends
           ports:
             - containerPort: {{ .Values.containerPort }}
-          readinessProbe:
+          #readinessProbe:
             #initialDelaySeconds: 60
-            httpGet:
-              path: {{ .Values.readinessProbe.path }}
-              port: {{ .Values.containerPort }}
+          #  httpGet:
+          #    path: {{ .Values.readinessProbe.path }}
+          #    port: {{ .Values.containerPort }}
           #livenessProbe:
           #  initialDelaySeconds: 60
           #  httpGet:
