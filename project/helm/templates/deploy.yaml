@@ -23,11 +23,11 @@ spec:
             initialDelaySeconds: 10
             httpGet:
               path: {{ .Values.readinessProbe.path }}
-              port: {{ .Values.containerPort }}
+              port: {{ .Values.readinessProbe.port }}
           livenessProbe:
             initialDelaySeconds: 10
             httpGet:
               path: {{ .Values.livenessProbe.path }}
-              port: {{ .Values.containerPort }}
+              port: {{ .Values.livenessProbe.port }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}

@@ -137,8 +137,15 @@ def metrics():
 # start the application on port 3111
 if __name__ == "__main__":
 
+    # set logger to handle STDOUT and STDERR
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    handlers = [stderr_handler, stdout_handler]
+
+    logging._addHandlerRef(handler)
     # Set the default log level to DEBUG
     logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s',
-                        level=logging.DEBUG)
+                        level=logging.DEBUG,
+                        handlers=handlers)
 
     app.run(host='0.0.0.0', port='3111')
