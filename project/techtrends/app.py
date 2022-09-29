@@ -1,3 +1,4 @@
+import sys
 import sqlite3
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, session
@@ -142,7 +143,6 @@ if __name__ == "__main__":
     stderr_handler = logging.StreamHandler(sys.stderr)
     handlers = [stderr_handler, stdout_handler]
 
-    logging._addHandlerRef(handler)
     # Set the default log level to DEBUG
     logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s',
                         level=logging.DEBUG,
